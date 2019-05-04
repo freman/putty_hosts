@@ -45,8 +45,8 @@ func ParseKeyName(keyName string) (algo, host string) {
 	return algo, host
 }
 
-// ToKnownHosts will convert a putty registry key/value combination into a known_hosts entry.
-func ToKnownHosts(keyName, keyValue string) (result string, err error) {
+// ToSSH will convert a putty registry key/value combination into a known_hosts entry.
+func ToSSH(keyName, keyValue string) (result string, err error) {
 	algo, host := ParseKeyName(keyName)
 	values := strings.Split(keyValue, ",")
 
