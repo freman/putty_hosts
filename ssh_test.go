@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/freman/putty_hosts"
+	"github.com/abakum/putty_hosts"
 )
 
 func TestToPutty(t *testing.T) {

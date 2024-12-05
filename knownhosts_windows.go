@@ -1,8 +1,10 @@
+//go:build windows
+// +build windows
+
 package putty_hosts
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 
 	"golang.org/x/crypto/ssh"
@@ -23,7 +25,7 @@ func KnownHosts() (ssh.HostKeyCallback, error) {
 		return nil, err
 	}
 
-	f, err := ioutil.TempFile(os.TempDir(), "knownhosts")
+	f, err := os.CreateTemp("", "knownhosts")
 	if err != nil {
 		return nil, err
 	}
